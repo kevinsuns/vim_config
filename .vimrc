@@ -25,6 +25,7 @@ Plugin 'rdnetto/YCM-Generator'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'pangloss/vim-javascript'
+Plugin 'altercation/vim-colors-solarized'
 call vundle#end()           "required
 filetype plugin indent on   "required
 
@@ -48,6 +49,9 @@ let g:ctrlp_user_command = 'mdfind -onlyin %s file'
 set wildignore+=*/tmp/*,**/build/**,.o,*.so,*.swp,*.zip,*.dll,*.png,*.jpg,*.ico,*.bmp     " Linux/MacOSX
 let g:ctrlp_user_command = "find %s -type f | egrep -v 'build' | egrep -v '/\.(git|hg|svn)|solr|tmp/' | egrep -v '\.(png|exe|jpg|gif|jar|class|swp|swo|log|gitkep|keepme|so|o)$'"
 let g:ctrlp_working_path_mode = 'ra'
+
+"YCM
+let g:ycm_server_python_interpreter = '/usr/bin/python'
 
 "EasyMotion
 let g:EasyMotion_leader_key = '<Leader>'
@@ -105,6 +109,8 @@ set nospell
 set swapfile
 set directory=/tmp
 
+set wildmenu
+set path+=**
  """"""""""""""""""""""""""""""
  " => Indent               
  """"""""""""""""""""""""""""""
@@ -144,8 +150,8 @@ set directory=/tmp
  
  " windows cursor movement
  "map <C-TAB> <C-W>w
- "set guifont=Inconsolata-dz\ for\ Powerline:h16
- set guifont=Roboto\ Mono\ for\ Powerline:h16
+ set guifont=Source\ Code\ Pro\ for\ Powerline\ Medium\ 14
+ "set guifont=Roboto\ Mono\ for\ Powerline:h16
  "set guifont=Monaco:h16
  " color schema
  colors desertEx
@@ -175,7 +181,7 @@ set directory=/tmp
 
 
  syn on
- if has('gui_macvim')
+ if has('gui_running')
     set guioptions-=T "no toolbar
     set guioptions-=r  "remove right-hand scroll bar
     set guioptions-=L  "remove left-hand scroll bar 
@@ -183,7 +189,13 @@ set directory=/tmp
     "set lines=50
     "set columns=150
     autocmd GUIEnter * set vb t_vb=
+    colors desertEx
+else
+    let g:solarized_termcolors=256
+    set background=light
+    colors solarized
  endif
+
  if has("cscope")
      set csprg=/opt/local/bin/cscope
      set csto=0

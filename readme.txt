@@ -12,3 +12,6 @@
 >git remote add origin https://github.com/kevinsuns/vim_config.git
 >git push -u origin master
 
+
+2017.1.14:
+add linux branch
