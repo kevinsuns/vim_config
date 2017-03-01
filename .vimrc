@@ -1,33 +1,36 @@
-set nocompatible    "required
-filetype off        "required
+" Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
+call plug#begin('~/.vim/plugged')
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'kien/ctrlp.vim'
-Plugin 'Raimondi/delimitMate'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'mbbill/desertEx'
-Plugin 'brandonbloom/csearch.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'rking/ag.vim'
-Plugin 'mileszs/ack.vim'
-Plugin 'fatih/vim-go'
-Plugin 'Shougo/unite.vim'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'Chiel92/vim-autoformat'
-Plugin 'rdnetto/YCM-Generator'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-fugitive'
-Plugin 'pangloss/vim-javascript'
-Plugin 'altercation/vim-colors-solarized'
-call vundle#end()           "required
+" Make sure you use single quotes
+Plug 'gmarik/Vundle.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'kien/ctrlp.vim'
+Plug 'Raimondi/delimitMate'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'mbbill/desertEx'
+Plug 'brandonbloom/csearch.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'rking/ag.vim'
+Plug 'mileszs/ack.vim'
+Plug 'fatih/vim-go'
+Plug 'Shougo/unite.vim'
+Plug 'tomtom/tcomment_vim'
+Plug 'Valloric/YouCompleteMe'
+Plug 'Chiel92/vim-autoformat'
+Plug 'rdnetto/YCM-Generator'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'pangloss/vim-javascript'
+Plug 'altercation/vim-colors-solarized'
+
+" Initialize plugin system
+call plug#end()
+
 filetype plugin indent on   "required
+
 
 "NerdTree
 :map <F6> :NERDTreeToggle<CR> 
